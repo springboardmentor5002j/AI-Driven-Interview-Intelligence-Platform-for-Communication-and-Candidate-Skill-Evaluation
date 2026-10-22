@@ -1,0 +1,16 @@
+# Supported Python: 3.12+ (Python 3.13 recommended)
+# Django 5.2 is the current LTS line; keep dependencies in compatible major ranges.
+Django>=5.2.18,<5.3
+djangorestframework>=3.18.3,<3.19
+djangorestframework-simplejwt[crypto]>=5.5.1,<6
+django-cors-headers>=4.9.0,<5
+python-decouple>=3.8,<4
+psycopg[binary]>=3.2,<4
+pypdf>=6.0,<7
+requests>=2.32,<3
+reportlab>=4.4,<5
+gunicorn>=23,<27; sys_platform != "win32"
+whitenoise>=6.9,<7
+boto3>=1.40,<2
+django-storages[s3]>=1.14.6,<2
+google-auth>=2.40,<3

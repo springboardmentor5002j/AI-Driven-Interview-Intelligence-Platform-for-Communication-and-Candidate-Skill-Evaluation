@@ -1,0 +1,25 @@
+# Secrets
+.env
+**/.env
+!.env.example
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+# Local data
+backend/db.sqlite3
+backend/media/
+# Frontend
+node_modules/
+dist/
+# IDE
+.vscode/
+.idea/
+
+# Build/test output
+.pytest_cache/
+.coverage
+htmlcov/
+staticfiles/
+*.log
