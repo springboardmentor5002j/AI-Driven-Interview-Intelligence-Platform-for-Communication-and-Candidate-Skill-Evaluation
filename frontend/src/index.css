@@ -1,0 +1,383 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700&display=swap');
+
+/* ============================================================
+   RESET & BASE
+   ============================================================ */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background: #F7F5F1;
+  color: #1F2430;
+}
+
+h1, h2, h3, .brand { font-family: 'Poppins', sans-serif; }
+
+/* ============================================================
+   AUTH PAGES (Login / Signup)
+   ============================================================ */
+.auth-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.auth-card {
+  background: #FFFFFF;
+  width: 100%;
+  max-width: 380px;
+  padding: 32px;
+  border-radius: 14px;
+  box-shadow: 0 10px 30px rgba(31,58,95,0.08);
+}
+
+.auth-card h1 { font-size: 22px; margin-bottom: 4px; color: #1F3A5F; }
+
+.subtitle { color: #5B6577; font-size: 14px; margin-bottom: 20px; }
+
+label { display: block; font-size: 13px; font-weight: 600; margin-bottom: 6px; margin-top: 16px; }
+
+input, select {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #DDD8CE;
+  border-radius: 8px;
+  font-size: 14px;
+  font-family: inherit;
+}
+input:focus, select:focus { outline: none; border-color: #1F3A5F; }
+
+button[type="submit"] {
+  width: 100%;
+  margin-top: 22px;
+  padding: 11px;
+  background: #1F3A5F;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+}
+button[type="submit"]:hover { background: #16304F; }
+button[type="submit"]:disabled { opacity: 0.6; cursor: not-allowed; }
+
+.error-banner {
+  background: #FDECEC;
+  color: #B3261E;
+  padding: 10px 12px;
+  border-radius: 8px;
+  font-size: 13px;
+  margin-bottom: 4px;
+}
+
+.switch-link { text-align: center; font-size: 13px; margin-top: 18px; color: #5B6577; }
+
+.link-btn {
+  background: none;
+  border: none;
+  color: #1F3A5F;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 0;
+  font-size: 13px;
+}
+
+/* ============================================================
+   APP SHELL (dashboards, navbar, content, panel)
+   ============================================================ */
+.app-shell { min-height: 100vh; }
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 32px;
+  background: #1F3A5F;
+  color: white;
+  gap: 16px;
+}
+.navbar .brand { font-size: 18px; font-weight: 700; }
+
+.nav-right { display: flex; align-items: center; gap: 16px; }
+.nav-right .link-btn { color: #F7F5F1; }
+
+.role-badge {
+  background: #2E7D6B;
+  padding: 4px 12px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.content { display: flex; justify-content: center; padding: 48px 24px; }
+
+.panel {
+  background: white;
+  width: 100%;
+  max-width: 480px;
+  padding: 32px;
+  border-radius: 14px;
+  box-shadow: 0 10px 30px rgba(31,58,95,0.06);
+}
+.panel h2 { font-size: 20px; margin-bottom: 6px; color: #1F3A5F; }
+.panel input[type="file"] { margin: 16px 0; }
+.panel button[type="submit"] { width: auto; padding: 10px 20px; }
+
+.wide-panel { max-width: 900px; }
+
+/* ============================================================
+   RESULT BOX / GENERATE BUTTON / QUESTION CARDS
+   ============================================================ */
+.result-box {
+  margin-top: 20px;
+  padding: 16px;
+  background: #F0F4F2;
+  border-radius: 8px;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.generate-btn {
+  width: 100%;
+  margin-top: 16px;
+  padding: 13px;
+  background: #2E7D6B;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+.generate-btn:hover:not(:disabled) { background: #256B5C; }
+.generate-btn:disabled { opacity: 0.6; cursor: not-allowed; }
+
+.questions-section { margin-top: 28px; }
+.questions-section h3 { font-size: 16px; color: #1F3A5F; margin-bottom: 14px; }
+
+.question-card {
+  display: flex;
+  gap: 14px;
+  background: #FAFAF7;
+  border: 1px solid #E5E1D8;
+  border-radius: 10px;
+  padding: 14px 16px;
+  margin-bottom: 10px;
+}
+.question-card p { font-size: 14px; line-height: 1.5; margin: 0; }
+
+.question-number {
+  flex-shrink: 0;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: #1F3A5F;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+/* ============================================================
+   DIFFICULTY / ROUND PICKERS, SPEAKING INDICATOR
+   ============================================================ */
+.difficulty-row { display: flex; gap: 8px; margin: 8px 0 4px; }
+
+.diff-btn {
+  flex: 1;
+  padding: 9px;
+  background: white;
+  color: #1F3A5F;
+  border: 1px solid #DDD8CE;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.diff-btn.active { background: #1F3A5F; color: white; border-color: #1F3A5F; }
+
+.diff-pill {
+  display: inline-block;
+  padding: 2px 10px;
+  background: #E8EEF5;
+  color: #1F3A5F;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.speaking-indicator { color: #2E7D6B; font-size: 13px; font-weight: 600; margin: 8px 0 14px; }
+
+/* ============================================================
+   INTERVIEW TIMER
+   ============================================================ */
+.interview-timer {
+  display: inline-block;
+  background: #E8EEF5;
+  color: #1F3A5F;
+  padding: 4px 12px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 700;
+  margin: 8px 0 14px;
+}
+.interview-timer.warning { background: #FDECEC; color: #B3261E; }
+
+/* ============================================================
+   TABS (Practice / My Progress)
+   ============================================================ */
+.tab-row { display: flex; gap: 6px; }
+.tab-btn {
+  background: transparent;
+  border: none;
+  color: #D8DEE8;
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.tab-btn.active { background: rgba(255,255,255,0.15); color: white; }
+
+/* ============================================================
+   CANDIDATE PROGRESS DASHBOARD (full-width grid)
+   ============================================================ */
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+}
+.dashboard-grid .full-width { grid-column: 1 / -1; }
+@media (max-width: 900px) {
+  .dashboard-grid { grid-template-columns: 1fr; }
+}
+
+/* ============================================================
+   RECRUITER DASHBOARD (reports table)
+   ============================================================ */
+.reports-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 16px;
+  font-size: 14px;
+}
+.reports-table th {
+  text-align: left;
+  padding: 10px 8px;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #5B6577;
+  border-bottom: 2px solid #E5E1D8;
+}
+.reports-table td {
+  padding: 12px 8px;
+  border-bottom: 1px solid #EFEBE2;
+  vertical-align: top;
+}
+.cell-sub { font-size: 12px; color: #5B6577; }
+
+/* ============================================================
+   ADMIN DASHBOARD (stat cards)
+   ============================================================ */
+.stats-row { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 16px; }
+.stat-card {
+  background: #FAFAF7;
+  border: 1px solid #E5E1D8;
+  border-radius: 10px;
+  padding: 14px 20px;
+  min-width: 110px;
+  text-align: center;
+}
+.stat-num { display: block; font-size: 24px; font-weight: 700; color: #1F3A5F; }
+.stat-label { font-size: 12px; color: #5B6577; }
+
+/* ============================================================
+   LANDING PAGE
+   ============================================================ */
+.landing { min-height: 100vh; background: #F7F5F1; }
+
+.landing-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 48px;
+}
+.landing-nav .brand { font-size: 20px; font-weight: 700; color: #1F3A5F; }
+.landing-nav-btn { width: auto; padding: 10px 22px; margin: 0; }
+
+.hero {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 60px 24px 70px;
+}
+.hero-badge {
+  display: inline-block;
+  background: #E8EEF5;
+  color: #1F3A5F;
+  padding: 5px 14px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+.hero h1 { font-size: 40px; line-height: 1.2; color: #1F2430; margin-bottom: 18px; }
+.hero-subtitle { font-size: 16px; color: #5B6577; line-height: 1.6; margin-bottom: 30px; }
+.hero-cta { width: auto; padding: 14px 32px; margin: 0 auto; font-size: 16px; }
+
+.features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 24px 70px;
+}
+.feature-card {
+  background: white;
+  padding: 26px 22px;
+  border-radius: 14px;
+  box-shadow: 0 8px 24px rgba(31,58,95,0.06);
+}
+.feature-icon { font-size: 28px; display: block; margin-bottom: 12px; }
+.feature-card h3 { font-size: 16px; color: #1F3A5F; margin-bottom: 8px; }
+.feature-card p { font-size: 14px; color: #5B6577; line-height: 1.5; }
+
+.how-it-works { background: white; padding: 60px 24px; text-align: center; }
+.how-it-works h2 { font-size: 26px; color: #1F3A5F; margin-bottom: 36px; }
+
+.steps-row {
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+  max-width: 900px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+.step-item { max-width: 180px; }
+.step-num {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  background: #1F3A5F;
+  color: white;
+  border-radius: 50%;
+  font-weight: 700;
+  margin: 0 auto 12px;
+}
+.step-item p { font-size: 14px; color: #5B6577; line-height: 1.4; }
+
+.landing-footer { text-align: center; padding: 60px 24px 70px; }
